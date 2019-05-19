@@ -7,7 +7,8 @@ var gulp = require('gulp'),
 	babel = require('gulp-babel'),
 	uglifyjs = require('gulp-uglify'),
 	uglifycss = require('gulp-uglifycss'),
-	rename = require('gulp-rename');
+	rename = require('gulp-rename'),
+	livereload = require('gulp-livereload');
 
 gulp.task('css', () => {
 	return gulp.src([
@@ -24,10 +25,12 @@ gulp.task('css', () => {
 			.pipe(gulp.dest('../staticfiles/css/production/'))
 			.pipe(uglifycss())
 			.pipe(rename('facelock.min.css'))
-		.pipe(gulp.dest('../staticfiles/css/production/'));
+		.pipe(gulp.dest('../staticfiles/css/production/'))
+			.pipe(livereload());
 });
 
 gulp.task('watch', () => {
+	livereload.listen();
 	gulp.watch('../staticfiles/css/development/sass/*', gulp.series('css'));
 });
 

@@ -31,6 +31,7 @@ services:
     image: nginx:1.15-alpine
     volumes:
       - ../nginx/conf.d/:/etc/nginx/conf.d/
+      - ../staticfiles/:/staticfiles/
     networks:
       facelock_net:
         ipv4_address: 172.16.50.10

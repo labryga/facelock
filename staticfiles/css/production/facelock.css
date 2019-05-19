@@ -274,3 +274,10 @@ template {
  */
 [hidden] {
   display: none; }
+
+body {
+  background-color: maroon;
+  color: orange; }
+
+
+
