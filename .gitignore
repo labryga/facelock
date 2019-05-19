@@ -11,6 +11,8 @@
 
 !/nginx/
 
+!/staticfiles/
+
 !.gitignore
 
 .env.facelock_database
