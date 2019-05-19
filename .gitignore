@@ -1,6 +1,13 @@
 /*
+
 !/docker-compose
-!/facelock
+
+!/facelock/
+
+!/gulp/
+/gulp/*
+!/gulp/gulpfile.js
+!/gulp/package.json
 
 !.gitignore
 
@@ -8,3 +15,5 @@
 .env.database_facelock
 *.pyc
 *.swp
+
+pip-selfcheck.json
