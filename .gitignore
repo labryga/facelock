@@ -1,1 +1,10 @@
+/*
+!/docker-compose
+!/facelock
 
+!.gitignore
+
+.env.django_facelock
+.env.database_facelock
+*.pyc
+*.swp
