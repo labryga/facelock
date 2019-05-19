@@ -11,7 +11,7 @@ RUN apk update \
 	&& apk add postgresql-dev && pip install psycopg2
 
 RUN groupadd -g 4321 atoris
-RUN chown -R :atoris /facelock
+RUN chown -R root:atoris /facelock
 
 COPY requirements_development.txt .
 RUN pip install -r requirements_development.txt

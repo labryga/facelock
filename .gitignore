@@ -15,7 +15,7 @@
 
 !.gitignore
 
-.env.facelock_database
+.env.facelock_postgres
 .env.facelock_django
 *.pyc
 *.swp
