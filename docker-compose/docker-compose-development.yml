@@ -5,7 +5,7 @@ services:
   facelock_django:
     build:
       context: ../facelock/ 
-      dockerfile: dockerfile-django-development
+      dockerfile: development.Dockerfile
     volumes:
       - ../facelock/:/facelock/
     env_file:
