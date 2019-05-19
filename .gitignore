@@ -11,8 +11,8 @@
 
 !.gitignore
 
-.env.django_facelock
-.env.database_facelock
+.env.facelock_database
+.env.facelock_django
 *.pyc
 *.swp
 

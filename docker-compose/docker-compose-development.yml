@@ -1,1 +1,28 @@
 version: "3"
+
+services:
+
+  facelock_django:
+    build:
+      context: ../facelock/ 
+      dockerfile: dockerfile-django-development
+    volumes:
+      - ../facelock/:/facelock/
+    env_file:
+      - .env.facelock_django
+    command: gunicorn facelock.wsgi:application -b 0.0.0.0
+    depends_on:
+      - facelock_database
+
+  facelock_database:
+    image: postgres:11.3-alpine
+    volumes:
+      - ../postgres_database:/var/lib/postgresql/data/
+    env_file:
+      - .env.facelock_database
+
+  facelock_nginx:
+    image: nginx:1.15-alpine
+
+volumes:
+  postgres_database:
