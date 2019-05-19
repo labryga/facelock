@@ -9,6 +9,8 @@
 !/gulp/gulpfile.js
 !/gulp/package.json
 
+!/nginx/
+
 !.gitignore
 
 .env.facelock_database

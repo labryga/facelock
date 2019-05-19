@@ -61,7 +61,7 @@ WSGI_APPLICATION = 'facelock.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_pslycopg2',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': os.environ.get("SQL_NAME"),
         'USER': os.environ.get("SQL_USER"),
         'PASSWORD': os.environ.get("SQL_PASSWORD"),

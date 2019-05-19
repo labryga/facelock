@@ -11,6 +11,9 @@ services:
     env_file:
       - .env.facelock_django
     command: gunicorn facelock.wsgi:application -b 0.0.0.0
+    networks:
+      facelock_net:
+        ipv4_address: 172.16.50.11
     depends_on:
       - facelock_database
 
@@ -20,9 +23,22 @@ services:
       - ../postgres_database:/var/lib/postgresql/data/
     env_file:
       - .env.facelock_database
+    networks:
+      facelock_net:
+        ipv4_address: 172.16.50.12
 
   facelock_nginx:
     image: nginx:1.15-alpine
+    networks:
+      facelock_net:
+        ipv4_address: 172.16.50.10
 
 volumes:
   postgres_database:
+
+networks:
+  facelock_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.50.0/24
