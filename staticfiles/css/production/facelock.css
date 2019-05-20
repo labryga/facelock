@@ -281,13 +281,28 @@ body {
   font-family: sans-serif; }
 
 #device {
-  width: 700px;
+  width: 400px;
   height: 700px;
   background-image: url("7.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 50%;
-  margin: 0px auto; }
+  margin: 80px auto;
+  position: relative; }
+
+#start {
+  background-image: url("1.png"); }
+
+#overview {
+  background-image: url("2.png"); }
+
+.slide {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  width: inherit;
+  height: inherit;
+  position: absolute; }
 
 h1, h2 {
   width: 300px;
