@@ -37,6 +37,8 @@ services:
     networks:
       facelock_net:
         ipv4_address: 172.16.50.10
+    ports:
+      - 80:80
 
 volumes:
   postgres_database:
