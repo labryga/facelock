@@ -277,7 +277,23 @@ template {
 
 body {
   background-color: maroon;
-  color: orange; }
+  color: blue;
+  font-family: sans-serif; }
+
+h1, h2 {
+  width: 300px;
+  margin: 40px auto;
+  background-color: yellow; }
+
+footer {
+  display: block; }
+  footer h3 {
+    background-color: skyblue;
+    width: 700px;
+    height: 70px;
+    margin: 0px;
+    color: green;
+    letter-spacing: 10px; }
 
 
 
