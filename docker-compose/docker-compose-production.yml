@@ -1,0 +1,51 @@
+version: "3"
+
+services:
+
+  facelock_django:
+    build:
+      context: ../facelock/ 
+      dockerfile: development.Dockerfile
+    volumes:
+      - ../facelock/:/facelock/
+    env_file:
+      - .env.facelock_django
+    command: gunicorn facelock.wsgi:application -b 0.0.0.0
+    networks:
+      facelock_net:
+        ipv4_address: 172.16.50.11
+    depends_on:
+      - facelock_postgres
+
+  facelock_postgres:
+    image: postgres:11.3-alpine
+    volumes:
+      - ../postgres_database:/var/lib/postgresql/data/
+    env_file:
+      - .env.facelock_postgres
+    networks:
+      facelock_net:
+        ipv4_address: 172.16.50.12
+
+  facelock_nginx:
+    build:
+      context: ../nginx/
+      dockerfile: development.Dockerfile
+    volumes:
+      - ../nginx/conf.d/:/etc/nginx/conf.d/
+      - ../staticfiles/:/staticfiles/
+    networks:
+      facelock_net:
+        ipv4_address: 172.16.50.10
+    ports:
+      - 80:80
+
+volumes:
+  postgres_database:
+
+networks:
+  facelock_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.50.0/24
