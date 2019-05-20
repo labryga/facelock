@@ -276,24 +276,23 @@ template {
   display: none; }
 
 body {
-  background-color: maroon;
+  background-color: skyblue;
   color: blue;
   font-family: sans-serif; }
+
+#device {
+  width: 700px;
+  height: 700px;
+  background-image: url("7.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50%;
+  margin: 0px auto; }
 
 h1, h2 {
   width: 300px;
   margin: 40px auto;
   background-color: yellow; }
-
-footer {
-  display: block; }
-  footer h3 {
-    background-color: skyblue;
-    width: 700px;
-    height: 70px;
-    margin: 0px;
-    color: green;
-    letter-spacing: 10px; }
 
 
 

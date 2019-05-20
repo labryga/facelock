@@ -30,7 +30,7 @@ services:
   facelock_nginx:
     build:
       context: ../nginx/
-      dockerfile: deveolpment.Dockerfile
+      dockerfile: development.Dockerfile
     volumes:
       - ../nginx/conf.d/:/etc/nginx/conf.d/
       - ../staticfiles/:/staticfiles/
