@@ -29,8 +29,25 @@ gulp.task('css', () => {
 			.pipe(livereload());
 });
 
+gulp.task('javascript', () => {
+	return gulp.src('../staticfiles/js/development/modules/*.js')
+			.pipe(concat('facelock_es6_build.js'))
+			.pipe(gulp.dest('../staticfiles/js/development/'))
+			.pipe(babel({
+				presets: ['@babel/env'],
+				plugins: ['babel-plugin-loop-optimizer']
+			}))
+			.pipe(rename('facelock.js'))
+			.pipe(gulp.dest('../staticfiles/js/production/'))
+			.pipe(uglifyjs())
+			.pipe(rename('facelock.min.js'))
+		.pipe(gulp.dest('../staticfiles/js/production/'));
+});
+
 gulp.task('watch', () => {
 	livereload.listen();
 	gulp.watch('../staticfiles/css/development/sass/*', gulp.series('css'));
+	gulp.watch('../staticfiles/js/development/modules/*.js', gulp.series('javascript'));
 });
+
 
