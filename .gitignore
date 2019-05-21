@@ -1,6 +1,8 @@
 /*
 
 !/docker-compose
+!production.django.Dockerfile
+!production.nginx.Dockerfile
 
 !/facelock/
 
