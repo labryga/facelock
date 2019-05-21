@@ -32,6 +32,8 @@ services:
         ipv4_address: 172.16.77.10
     ports:
       - 80:80
+    depends_on:
+      - facelock_django        
 
 networks:
   facelock_net:
