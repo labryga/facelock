@@ -13,7 +13,7 @@ RUN apk update \
 RUN groupadd -g 4321 atoris
 RUN chown -R root:atoris /facelock
 
-COPY ../facelock/ /facelock/
+COPY /facelock/ /facelock/
 RUN ls -la /facelock
 RUN pip install -r requirements_development.txt
 RUN apk del build-deps

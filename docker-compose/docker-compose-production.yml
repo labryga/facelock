@@ -5,7 +5,7 @@ services:
   facelock_django:
     build:
       context: ../
-      dockerfile: ../facelock/production.django.Dockerfile
+      dockerfile: production.django.Dockerfile
     env_file:
       - .env.facelock_django
     command: gunicorn facelock.wsgi:application -b 0.0.0.0
@@ -25,7 +25,7 @@ services:
 
   facelock_nginx:
     build:
-      context: ../nginx/
+      context: ../
       dockerfile: production.nginx.Dockerfile
     networks:
       facelock_net:
