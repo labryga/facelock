@@ -33,7 +33,7 @@ services:
       dockerfile: development.Dockerfile
     volumes:
       - ../nginx/conf.d/:/etc/nginx/conf.d/
-      - ../staticfiles/:/staticfiles/
+      - ../staticfiles/production/:/staticfiles/
     networks:
       facelock_net:
         ipv4_address: 172.16.50.10
