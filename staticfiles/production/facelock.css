@@ -297,12 +297,9 @@ body {
   background-position: 40px 40px; }
 
 #device {
+  background-color: rgba(210, 10, 50, 0.5);
   width: 400px;
-  height: 700px;
-  background-image: url("frame.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: 50%;
+  height: 800px;
   margin: 80px auto 50px;
   position: relative; }
 
@@ -331,6 +328,9 @@ body {
     color: cyan;
     text-decoration: none;
     display: inline-block; }
+
+img {
+  position: absolute; }
 
 
 

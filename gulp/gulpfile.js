@@ -41,7 +41,8 @@ gulp.task('javascript', () => {
 			.pipe(gulp.dest('../staticfiles/production/'))
 			.pipe(uglifyjs())
 			.pipe(rename('facelock.min.js'))
-		.pipe(gulp.dest('../staticfiles/production/'));
+		.pipe(gulp.dest('../staticfiles/production/'))
+			.pipe(livereload());
 });
 
 gulp.task('watch', () => {
