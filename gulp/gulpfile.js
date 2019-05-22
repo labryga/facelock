@@ -22,10 +22,10 @@ gulp.task('css', () => {
 			.pipe(sass().on('error', sass.logError))
 			.pipe(autoprefixer('last 5 versions', 'Android >= 2.3', 'ChromeAndroid >= 20'))
 			.pipe(concat('facelock.css'))
-			.pipe(gulp.dest('../staticfiles/css/production/'))
+			.pipe(gulp.dest('../staticfiles/production/'))
 			.pipe(uglifycss())
 			.pipe(rename('facelock.min.css'))
-		.pipe(gulp.dest('../staticfiles/css/production/'))
+		.pipe(gulp.dest('../staticfiles/production/'))
 			.pipe(livereload());
 });
 
@@ -38,10 +38,10 @@ gulp.task('javascript', () => {
 				plugins: ['babel-plugin-loop-optimizer']
 			}))
 			.pipe(rename('facelock.js'))
-			.pipe(gulp.dest('../staticfiles/js/production/'))
+			.pipe(gulp.dest('../staticfiles/production/'))
 			.pipe(uglifyjs())
 			.pipe(rename('facelock.min.js'))
-		.pipe(gulp.dest('../staticfiles/js/production/'));
+		.pipe(gulp.dest('../staticfiles/production/'));
 });
 
 gulp.task('watch', () => {
