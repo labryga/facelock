@@ -299,7 +299,7 @@ body {
 #device {
   width: 400px;
   height: 700px;
-  background-image: url("7.png");
+  background-image: url("frame.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 50%;
@@ -307,10 +307,10 @@ body {
   position: relative; }
 
 #start {
-  background-image: url("1.png"); }
+  background-image: url("start.png"); }
 
 #overview {
-  background-image: url("2.png"); }
+  background-image: url("overview.png"); }
 
 .slide {
   background-size: contain;
