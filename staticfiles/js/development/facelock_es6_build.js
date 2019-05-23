@@ -38,10 +38,17 @@ slides.addEventListener("click", (event) => {
 	}
 
 	let x_authorize = event.offsetX > 24 && event.offsetX < 323;
-	let y_authorize = event.offsetY > 353 && event.offsetY < 390; 
+	let y_authorize = event.offsetY > 355 && event.offsetY < 390; 
 	if (x_authorize && y_authorize && event.target.id == "overview") {
 		undisplay();
 		authorize.style.display = "block";
+	}
+
+	let x_authenticate = event.offsetX > 24 && event.offsetX < 323;
+	let y_authenticate = event.offsetY > 300 && event.offsetY < 340; 
+	if (x_authenticate && y_authenticate && event.target.id == "overview") {
+		undisplay();
+		authenticate.style.display = "block";
 	}
 
 	});
