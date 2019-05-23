@@ -7,12 +7,18 @@ html
 		div(id="logo")
 		div(id="menu")
 
-		div(id="device")
-			img(src="frame.png", width="")
-			img(src="start.png", width="")
+		div(id="frame")
+
+		div(id="slides")
+			categories = ["start", "overview", "authorize", "authorize", "request", "contacts"]
+			each item in categories
+				img(id=(item), src=(item + ".png"))
 
 		div(id="footer")
 			div(id="github")
-				a(href="http://github.com/labryga/facelock", target="_blank")= "GitHub"
+				div(id="wert")
+				div(id="imgx")
+				div(id="imgy")
+				// a(href="http://github.com/labryga/facelock", target="_blank")= "GitHub"
 
 		script(src="facelock.js")

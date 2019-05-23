@@ -20,13 +20,18 @@ body
   background-size: 90px 90px
   background-position: 40px 40px
 
-#device
-  // background-image: url("frame.png")
-  background-color: rgba(210, 10, 50, 0.5)
-  width: 400px
-  height: 800px
-  margin: 80px auto 50px
-  position: relative
+
+#frame
+  background-image: url("frame.png")
+  // background-color: rgba(210, 10, 50, 0.5)
+  width: 350px
+  height: 684px
+  margin: 80px auto
+  position: absolute
+  z-index: -5
+  left: 50%
+  transform: translate(-50%)
+  display: block
 
 #start
   background-image: url("start.png")
@@ -54,5 +59,19 @@ body
     text-decoration: none
     display: inline-block
 
-img
+
+#slides
+  // background-color: rgba(110, 110, 50, 0.7)
+  width: 350px
+  height: 684px
+  margin: 80px auto
   position: absolute
+  left: 50%
+  transform: translate(-50%)
+  z-index: -1
+  // cursor: pointer
+  img
+    position: absolute
+    z-index: 5
+    display: none
+
