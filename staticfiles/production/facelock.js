@@ -28,10 +28,11 @@ function undisplay() {
 }
 
 slides.addEventListener("click", function (event) {
-  var x_back = event.offsetX > 24 && event.offsetX < 323;
+  var x_width = event.offsetX > 24 && event.offsetX < 323;
+  var target_overview = event.target.id == "overview";
   var y_back = event.offsetY > 510 && event.offsetY < 565;
 
-  if (x_back && y_back) {
+  if (x_width && y_back) {
     if (event.target.id == "start") {
       undisplay();
       overview.style.display = "block";
@@ -44,34 +45,30 @@ slides.addEventListener("click", function (event) {
     }
   }
 
-  var x_contacts = event.offsetX > 24 && event.offsetX < 323;
   var y_contacts = event.offsetY > 455 && event.offsetY < 495;
 
-  if (x_contacts && y_contacts && event.target.id == "overview") {
+  if (x_width && y_contacts && target_overview) {
     undisplay();
     contacts.style.display = "block";
   }
 
-  var x_request = event.offsetX > 24 && event.offsetX < 323;
   var y_reqest = event.offsetY > 406 && event.offsetY < 440;
 
-  if (x_request && y_reqest && event.target.id == "overview") {
+  if (x_width && y_reqest && target_overview) {
     undisplay();
     request.style.display = "block";
   }
 
-  var x_authorize = event.offsetX > 24 && event.offsetX < 323;
-  var y_authorize = event.offsetY > 355 && event.offsetY < 390;
+  var y_authorize = event.offsetY > 300 && event.offsetY < 340;
 
-  if (x_authorize && y_authorize && event.target.id == "overview") {
+  if (x_width && y_authorize && target_overview) {
     undisplay();
     authorize.style.display = "block";
   }
 
-  var x_authenticate = event.offsetX > 24 && event.offsetX < 323;
-  var y_authenticate = event.offsetY > 300 && event.offsetY < 340;
+  var y_authenticate = event.offsetY > 355 && event.offsetY < 390;
 
-  if (x_authenticate && y_authenticate && event.target.id == "overview") {
+  if (x_width && y_authenticate && target_overview) {
     undisplay();
     authenticate.style.display = "block";
   }
