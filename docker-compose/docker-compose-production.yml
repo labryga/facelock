@@ -8,9 +8,9 @@ services:
       dockerfile: production.django.Dockerfile
     env_file:
       - .env.facelock_django
-    command: gunicorn facelock.wsgi:application -b 0.0.0.0
+    command: gunicorn facelock.wsgi:application -b 0.0.0.0:8000
     networks:
-      facelock_net:
+      facelock_net_production:
         ipv4_address: 172.16.77.11
     depends_on:
       - facelock_postgres
@@ -20,7 +20,7 @@ services:
     env_file:
       - .env.facelock_postgres
     networks:
-      facelock_net:
+      facelock_net_production:
         ipv4_address: 172.16.77.12
 
   facelock_nginx:
@@ -28,7 +28,7 @@ services:
       context: ../
       dockerfile: production.nginx.Dockerfile
     networks:
-      facelock_net:
+      facelock_net_production:
         ipv4_address: 172.16.77.10
     ports:
       - 80:80
@@ -36,9 +36,8 @@ services:
       - facelock_django        
 
 networks:
-  facelock_net:
+  facelock_net_production:
     ipam:
       driver: default
       config:
         - subnet: 172.16.77.0/24
-

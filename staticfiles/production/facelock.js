@@ -78,8 +78,6 @@ slides.addEventListener("mousemove", function (event) {
   var y = event.offsetY > 510 && event.offsetY < 565;
   var x_contacts = event.offsetX > 24 && event.offsetX < 323;
   var y_contacts = event.offsetY > 455 && event.offsetY < 495;
-  imgx.innerHTML = event.offsetX;
-  imgy.innerHTML = event.offsetY;
 
   if (x && y || x_contacts && y_back) {
     event.currentTarget.style.cursor = "pointer";
