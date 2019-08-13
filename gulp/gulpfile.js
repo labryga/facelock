@@ -49,4 +49,3 @@ gulp.task('watch', () => {
   gulp.watch('../staticfiles/css/development/sass/*', gulp.series('css'));
   gulp.watch('../staticfiles/js/development/modules/*.js', gulp.series('javascript'));
 });
-
